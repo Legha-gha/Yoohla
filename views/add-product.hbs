@@ -1,0 +1,265 @@
+<div class="page-header">
+    <h3 class="page-title">
+        <div class="d-flex flex-row align-items-center">
+            {{!-- <i class="mdi mdi-plus-circle-multiple-outline icon-lg text-danger"></i> --}}
+            <p class="mb-0 ml-2" style="font-size: 1.125rem;"> Add Product </p>
+        </div>
+    </h3>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/products-mgmt">Products Mananger</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Add Product</li>
+        </ol>
+    </nav>
+</div>
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card colm1 text-dark font-weight-bold">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-body">
+                    <form>
+                        <div class="row add-p">
+                            <div class="col-md-6 colm">
+                                <div class="form-group text-dark">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Product Name"
+                                            aria-label="Prodname" aria-describedby="basic-addon1" required>
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <div class="input-group ">
+                                        <input type="number" class="form-control" placeholder="Price" required>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text text-dark">FCFA</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row sub">
+                                    <div class="form-group col-8">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text text-dark">%</span>
+                                            </div>
+                                            <input type="number" class="form-control" placeholder="Discount">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-4">
+                                        <div class="input-group ">
+                                            <input type="number" class="form-control" placeholder="Qty in stock"
+                                                required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleTextarea1">Short Desrciption</label>
+                                    <textarea class="form-control" id="exampleTextarea1" rows="3" required></textarea>
+                                </div>
+
+                                <hr>
+
+                                <div class="form-group">
+                                    <label for="exampleTextarea1">Desrciption</label>
+                                    <textarea class="form-control" id="exampleTextarea2" rows="8"></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="table-specs">Specifications</label>
+                                    <table class="table table-hover table-specs">
+
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-dark"> Version </td>
+                                                <td>
+                                                    <input type="text" class="form-control specs"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-dark"> Version </td>
+                                                <td>
+                                                    <input type="text" class="form-control specs"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-dark"> Version </td>
+                                                <td>
+                                                    <input type="text" class="form-control specs"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-dark"> Version </td>
+                                                <td>
+                                                    <input type="text" class="form-control specs"></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 sec">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <h4>Upload product image</h4>
+                                        <div class="upload-container">
+                                            <div class="border-container">
+                                                <div class="icons fa-4x">
+                                                    <i class="mdi mdi-image-filter" data-fa-transform="shrink-2 up-4"></i>
+                                                </div>
+                                                <input class="file-upload m" type='file' onchange="readURL(this);"
+                                                    accept="image/*" />
+                                                <div class="drag-text">
+                                                    <p>Drop files here, or
+                                                        <a id="file-browser"
+                                                            onclick="$('.file-upload.m').trigger( 'click' )">browse</a>
+                                                        </p>
+                                                </div>
+                                            </div>
+                                            <div class="file-upload-content">
+                                                <img class="file-upload-image main" src="#" alt="your image" />
+                                                <div class="image-title-wrap">
+                                                    <i onclick="removeUpload()"
+                                                        class="mdi mdi-close-circle-outline icon-md text-danger remove-image"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mini" {{!--style="justify-content: space-between;">--}}>
+                                    <div class="col-md-3">
+                                        <div class="upload-container">
+                                            <div class="border-container">
+                                                <div class="icons">
+                                                    <i class="mdi mdi-plus-circle-outline icon-lg" onclick="$('.file-upload.s0').trigger( 'click' )"></i>
+                                                </div>
+                                                <input class="file-upload s0" type='file' onchange="readURL(this);"
+                                                    accept="image/*" />
+                                            </div>
+                                            <div class="file-upload-content">
+                                                <img class="file-upload-image small" src="#" alt="your image" />
+                                                <div class="image-title-wrap">
+                                                    <i onclick="removeUpload()"
+                                                        class="mdi mdi-close-circle-outline text-danger remove-image"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <div class="upload-container">
+                                            <div class="border-container">
+                                                <div class="icons">
+                                                    <i class="mdi mdi-plus-circle-outline icon-lg" onclick="$('.file-upload.s1').trigger( 'click' )"></i>
+                                                </div>
+                                                <input class="file-upload s1" type='file' onchange="readURL(this);"
+                                                    accept="image/*" />
+                                            </div>
+                                            <div class="file-upload-content">
+                                                <img class="file-upload-image small" src="#" alt="your image" />
+                                                <div class="image-title-wrap">
+                                                    <i onclick="removeUpload()"
+                                                        class="mdi mdi-close-circle-outline text-danger remove-image"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {{!-- <div class="col-md-3">
+                                        <div class="upload-container">
+                                            <div class="border-container">
+                                                <div class="icons">
+                                                    <i class="mdi mdi-plus-circle-outline icon-lg" onclick="$('.file-upload.s2').trigger( 'click' )"></i>
+                                                </div>
+                                                <input class="file-upload s2" type='file' onchange="readURL(this);"
+                                                    accept="image/*" />
+                                            </div>
+                                            <div class="file-upload-content">
+                                                <img class="file-upload-image small" src="#" alt="your image" />
+                                                <div class="image-title-wrap">
+                                                    <i onclick="removeUpload()"
+                                                        class="mdi mdi-close-circle-outline text-danger remove-image"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> --}}
+
+                                    <div class="col-md-3">
+                                        <div class="upload-container">
+                                            <div class="border-container">
+                                                <div class="icons">
+                                                    <i class="mdi mdi-plus-circle-outline icon-lg" onclick="$('.file-upload.s3').trigger( 'click' )"></i>
+                                                </div>
+                                                <input class="file-upload s3" type='file' onchange="readURL(this);"
+                                                    accept="image/*" />
+                                            </div>
+                                            <div class="file-upload-content">
+                                                <img class="file-upload-image small" src="#" alt="your image" />
+                                                <div class="image-title-wrap">
+                                                    <i onclick="removeUpload()"
+                                                        class="mdi mdi-close-circle-outline text-danger remove-image"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <div class="row">
+                                    <div class="col-md-8 sub">
+                                        <h5 class="card-title">Categories</h5>
+                                        <hr>
+                                        <div class="form-group" style="padding: 0 .3rem;">
+                                            <div class="form-check form-check-dark">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input"> Primary <i
+                                                        class="input-helper"></i></label>
+                                            </div>
+                                            <div class="form-check form-check-dark">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input"> Success <i
+                                                        class="input-helper"></i></label>
+                                            </div>
+                                            <div class="form-check form-check-dark">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input"> Info <i
+                                                        class="input-helper"></i></label>
+                                            </div>
+                                            <div class="form-check form-check-dark">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input"> Danger <i
+                                                        class="input-helper"></i></label>
+                                            </div>
+                                            <div class="form-check form-check-dark">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input"> Warning <i
+                                                        class="input-helper"></i></label>
+                                            </div>
+                                            <div class="form-check form-check-dark">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" name="" id=""> Boom</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <span class="d-flex align-items-center purchase-popup bg-light"
+                                    style="padding: .3rem; border-bottom: 0">
+                                    <p>Tags</p>
+                                    <button type="button" class="btn btn-light text-dark btn-sm ml-auto btn-icon-text">
+                                        Tag 1 <i
+                                            class="remove mdi mdi-close-circle-outline text-danger btn-icon-append"></i>
+                                    </button> <i class="remove mdi mdi-close-circle-outline text-danger"></i>
+                                </span>
+                                <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                                    <button type="submit" class="btn btn-inverse-success btn-sm">Publish</button>
+                                    <button type="reset" class="btn btn-inverse-danger btn-sm">Discard</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

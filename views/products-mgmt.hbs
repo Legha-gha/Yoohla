@@ -1,0 +1,169 @@
+<div class="page-header">
+    <h3 class="page-title"> Products </h3>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Products Mananger</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Products</li>
+        </ol>
+    </nav>
+</div>
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2 text-nowrap">
+                        <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable">
+                            <button type="button" class="btn btn-sm btn-gradient-danger btn-icon-text"><a href="add-product" style="text-decoration: none; color: var(--light);">
+                                <i class="mdi mdi-plus-circle-multiple-outline btn-icon-prepend"></i>
+                                Upload</a>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-3 text-nowrap">
+                        <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable">
+                            <label>Show <select class="form-control form-control-sm custom-select custom-select-sm">
+                                    <option value="10" selected>Category</option>
+                                    <option value="25">Cat 1</option>
+                                    <option value="50">Cat 2</option>
+                                    <option value="100">Cat 3</option>
+                                </select></label>
+                        </div>
+                    </div>
+                    <div class="col-md-2 text-nowrap">
+                        <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable">
+                            <label> Show <select class="form-control form-control-sm custom-select custom-select-sm">
+                                    <option value="10" selected>In stock</option>
+                                    <option value="25">Out of stock</option>
+                                    <option value="50">Deleted</option>
+                                </select></label>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="text-md-right dataTables_filter" id="dataTable_filter">
+                            <label>
+                                <input type="search" class="form-control form-control-sm" aria-controls="dataTable"
+                                    placeholder="Search" />
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive table mt-2" id="dataTable" role="grid"
+                    aria-describedby="dataTable_info">
+                    <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th> Product </th>
+                            <th> Name </th>
+                            <th> SNU </th>
+                            <th class="text-success"> Status </th>
+                            <th> Price </th>
+                            <th> Date </th>
+                            <th> Seen </th>
+                            <th> <i class="mdi mdi-delete-variant text-danger"></i> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="todo-list todo-list-custom">
+                            <td class="py-1">
+                                <img src="../../assets/images/faces-clipart/pic-1.png" alt="image" />
+                            </td>
+                            <td> - </td>
+                            <td> - </td>
+                            {{!-- <td> 
+                                        <label class="badge badge-info">in stock</label>
+                                    </td> --}}
+                            <td class="text-success"> ? </td>
+                            <td> 0 FCFA </td>
+                            <td> Jan 1, 2020 </td>
+                            <td> 0 </td>
+                            <td> <i class="remove mdi mdi-close-circle-outline text-danger"></i> </td>
+                        </tr>
+                           <tr class="todo-list todo-list-custom">
+                            <td class="py-1">
+                                <img src="../../assets/images/faces-clipart/pic-1.png" alt="image" />
+                            </td>
+                            <td> - </td>
+                            <td> - </td>
+                            <td class="text-success"> In stock </td>
+                            <td> 0 FCFA </td>
+                            <td> Jan 1, 2020 </td>
+                            <td> 0 </td>
+                            <td> <i class="remove mdi mdi-close-circle-outline text-danger"></i> </td>
+                        </tr>
+                           <tr class="todo-list todo-list-custom">
+                            <td class="py-1">
+                                <img src="../../assets/images/faces-clipart/pic-2.png" alt="image" />
+                            </td>
+                            <td> - </td>
+                            <td> - </td>
+                            <td class="text-success"> In stock </td>
+                            <td> 0 FCFA </td>
+                            <td> Jan 1, 2020 </td>
+                            <td> 0 </td>
+                            <td> <i class="remove mdi mdi-close-circle-outline text-danger"></i> </td>
+                        </tr>
+                           <tr class="todo-list todo-list-custom">
+                            <td class="py-1">
+                                <img src="../../assets/images/faces-clipart/pic-3.png" alt="image" />
+                            </td>
+                            <td> - </td>
+                            <td> - </td>
+                            <td class="text-success"> In stock </td>
+                            <td> 0 FCFA </td>
+                            <td> Jan 1, 2020 </td>
+                            <td> 0 </td>
+                            <td> <i class="remove mdi mdi-close-circle-outline text-danger"></i> </td>
+                        </tr>
+                           <tr class="todo-list todo-list-custom">
+                            <td class="py-1">
+                                <img src="../../assets/images/faces-clipart/pic-1.png" alt="image" />
+                            </td>
+                            <td> - </td>
+                            <td> - </td>
+                            <td class="text-success"> In stock </td>
+                            <td> 0 FCFA </td>
+                            <td> Jan 1, 2020 </td>
+                            <td> 0 </td>
+                            <td> <i class="remove mdi mdi-close-circle-outline text-danger"></i> </td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                           <tr>
+                                <td> Product </td>
+                                <td> Name </td>
+                                <td> SNU </td>
+                                <td class="text-success"> Status </td>
+                                <td> Price </td>
+                                <td> Date </td>
+                                <td> Seen </td>
+                                <td> <i class="mdi mdi-delete-variant text-danger"></i> </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 align-self-center">
+                        <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10
+                            of 27</p>
+                    </div>
+                    <div class="col-md-6">
+                        <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                            <ul class="pagination">
+                                <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span
+                                            aria-hidden="true">«</span></a></li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span
+                                            aria-hidden="true">»</span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
